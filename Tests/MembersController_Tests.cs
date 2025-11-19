@@ -48,7 +48,7 @@ public class MembersControllerTests : IClassFixture<WebApplicationFactory<Progra
 
         var Members = result.Result!.ToList();
 
-        Assert.True(Members.Count >= 2);
+        Assert.False(Members.Count >= 2);
         Assert.Contains(Members, x => x.Email == "john.doe@domain.com");
         Assert.Contains(Members, x => x.Email == "jane.doe@domain.com");
     }
