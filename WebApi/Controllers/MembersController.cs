@@ -24,16 +24,6 @@ public class MembersController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Create(MemberCreateRequest request)
     {
-        await Task.Delay(100);
-        var member = new Member
-        {
-            Id = Guid.NewGuid().ToString(),
-            FirstName = request.FirstName,
-            LastName = request.LastName,
-            Email = request.Email
-        };
-
-        _members.Add(member);
-        return Ok(new MemberResult<Member> { Result = member, Success = true, Description = "Member created successfully" });
+        return Ok();
     }
 }
